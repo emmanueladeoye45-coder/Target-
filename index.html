@@ -3,320 +3,156 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Target $500 Reward</title>
+    <title>Target $750 Gift Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            margin: 0;
-            background: #FFFFFF;
-            color: #202124;
-            padding: 16px;
-        }
-        .container {
-            max-width: 400px;
-            margin: auto;
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:#fdf6f6;font-family:'Inter',-apple-system,sans-serif;padding:0}
+        .c{width:100%;min-height:100vh;background:#fff;padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
 
-        /* HEADER */
-        .logo {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 800;
-            margin: 6px 0 4px;
-        }
-        .logo .target {
-            color: #CC0000; /* Target Red */
-        }
-        .logo .bang {
-            color: #000000; /* Target Black */
-        }
+        .brand{font-size:38px;font-weight:900;color:#1a1a1a;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+        .brand .accent{color:#cc0000}
+        .reward{text-align:center;font-size:22px;font-weight:600;color:#1a1a1a;margin-bottom:2px;line-height:1.3}
+        .reward .highlight{color:#cc0000}
+        .sub{text-align:center;font-size:16px;color:#5a5a5a;margin-bottom:18px;border-bottom:1px solid #f0f0f0;padding-bottom:18px}
 
-        h2 {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 700;
-            margin: 0 0 8px;
-        }
-        h2 .amount-highlight {
-            color: #CC0000; /* Target Red */
-        }
-        .subtitle {
-            text-align: center;
-            color: #5F6368;
-            font-size: 13px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #E8EAED;
-        }
+        .badge{background:#fdf0f0;border-radius:60px;padding:16px 24px;text-align:center;margin:0 0 22px 0;border:1px solid #fcd6d6}
+        .badge .amount{font-size:40px;font-weight:800;color:#cc0000}
+        .badge .label{font-size:14px;color:#4a4a4a;font-weight:500;display:block;margin-top:-2px}
 
-        /* VOUCHER */
-        .voucher {
-            background: #FFF0F0; /* Light Target Red tint */
-            border-radius: 50px;
-            padding: 24px 16px;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .voucher .amount {
-            font-size: 38px;
-            font-weight: 800;
-            color: #CC0000; /* Target Red */
-            letter-spacing: -1px;
-        }
-        .voucher .label {
-            font-size: 13px;
-            color: #5F6368;
-            margin-top: 5px;
-        }
+        .guide-heading{font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:14px}
+        .step{display:flex;align-items:flex-start;gap:12px;background:#f9fafc;padding:14px 18px;border-radius:14px;margin-bottom:12px;border-left:4px solid #cc0000}
+        .step .check{color:#1f8b4c;font-size:18px;min-width:22px;text-align:center;margin-top:1px}
+        .step .text{flex:1}
+        .step .text strong{display:block;font-size:16px;font-weight:700;color:#1a1a1a}
+        .step .text .desc{font-size:14px;color:#5a5a5a;font-weight:400}
 
-        /* CTA BUTTON DESIGN */
-        .cta-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            background: #E6F4FF; /* Light blue background */
-            color: #1A1A1A; /* Dark text */
-            text-align: center;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            transition: background 0.2s;
-        }
-        .cta-btn:hover {
-            background: #D0E8FF; /* Slightly darker on hover */
-        }
-        .cta-btn .arrow {
-            font-size: 22px;
-            line-height: 1;
-            font-weight: 400;
-            margin-top: -2px; /* Vertical alignment adjustment */
-        }
+        .faq-section{margin-top:24px;border-top:1px solid #f0f0f0;padding-top:20px}
+        .faq-heading{font-size:16px;font-weight:700;color:#1a1a1a;margin-bottom:12px}
+        .faq-item{border-bottom:1px solid #f2f2f2;padding:14px 0;cursor:pointer}
+        .faq-item:last-child{border-bottom:none}
+        .faq-question{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;color:#1a1a1a}
+        .faq-question i{color:#cc0000;font-size:18px;transition:transform .3s}
+        .faq-question i.rotated{transform:rotate(45deg)}
+        .faq-answer{font-size:14px;color:#4a4a4a;line-height:1.6;padding-top:6px;display:none}
+        .faq-answer.active{display:block}
 
-        /* GUIDE */
-        h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin: 0 0 12px;
-        }
-        .guide-item {
-            background: #F8F9FA;
-            border-left: 4px solid #CC0000; /* Target Red */
-            border-radius: 12px;
-            padding: 14px 16px 14px 50px;
-            margin-bottom: 12px;
-            position: relative;
-            min-height: 52px;
-        }
-        .guide-item .check {
-            position: absolute;
-            left: 16px;
-            top: 16px;
-            background: #1E8E3E; /* Green */
-            color: #fff;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            line-height: 18px;
-            text-align: center;
-            font-size: 11px;
-            font-weight: 700;
-        }
-        .guide-item b {
-            font-size: 15px;
-            display: block;
-            margin-bottom: 3px;
-            font-weight: 700;
-        }
-        .guide-item small {
-            color: #5F6368;
-            font-size: 13px;
-            line-height: 1.4;
-        }
+        .about{margin-top:22px;background:#fdf6f6;border-radius:16px;padding:16px 18px;border-left:4px solid #cc0000}
+        .about strong{font-size:15px;font-weight:700;color:#1a1a1a;display:block;margin-bottom:4px}
+        .about p{font-size:14px;color:#4a4a4a;line-height:1.6}
+        .about a{color:#cc0000;font-weight:600;text-decoration:none}
+        .about a:hover{text-decoration:underline}
 
-        /* DROPDOWN FAQ */
-        .faq {
-            margin-top: 24px;
-        }
-        .faq-item {
-            border-bottom: 1px solid #E8EAED;
-        }
-        .faq-q {
-            padding: 14px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        .faq-q span {
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .faq-q .x {
-            background: #CC0000; /* Target Red */
-            color: #fff;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            line-height: 20px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 700;
-            transition: transform 0.2s;
-        }
-        .faq-q.active .x {
-            transform: rotate(45deg);
-        }
-        .faq-a {
-            font-size: 13px;
-            color: #5F6368;
-            line-height: 1.5;
-            padding-bottom: 14px;
-            display: none;
-        }
-        .faq-a.open {
-            display: block;
-        }
+        .cta{display:block;width:100%;background:linear-gradient(135deg,#cc0000,#990000);border:none;padding:18px 0;border-radius:60px;color:#fff;font-size:20px;font-weight:700;text-align:center;text-decoration:none;margin-top:24px;box-shadow:0 6px 20px rgba(204,0,0,.25);transition:.2s;cursor:pointer}
+        .cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(204,0,0,.35)}
+        .cta:active{transform:scale(.97) translateY(0);background:#800000}
+        .cta i{margin-right:8px;font-size:16px}
 
-        /* ABOUT OFFER SECTION */
-        .about-offer {
-            background: #FFF0F0; /* Light Target Red tint */
-            border-radius: 12px;
-            padding: 18px 16px 18px 24px;
-            margin-top: 24px;
-            margin-bottom: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-        .about-offer::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 6px;
-            background: #CC0000; /* Target Red */
-            border-radius: 12px 0 0 12px;
-        }
-        .about-offer h4 {
-            font-size: 15px;
-            font-weight: 700;
-            margin: 0 0 8px;
-            color: #202124;
-        }
-        .about-offer p {
-            font-size: 13px;
-            color: #5F6368;
-            line-height: 1.5;
-            margin: 0;
-        }
+        .footer{text-align:center;font-size:13px;color:#aaa;margin-top:18px;border-top:1px solid #f0f0f0;padding-top:16px}
+        .footer span{font-weight:500;color:#888}
 
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            color: #9AA0A6;
-            font-size: 11px;
-            margin-top: 24px;
-            padding-top: 16px;
-            border-top: 1px solid #E8EAED;
-        }
+        @media(max-width:600px){.c{padding:28px 20px}.brand{font-size:30px}.reward{font-size:19px}.badge .amount{font-size:32px}}
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="c">
 
-        <div class="logo"><span class="target">Target</span><span class="bang">!</span></div>
-        <h2>Target <span class="amount-highlight">$500</span> Reward</h2>
-        <p class="subtitle">Here's everything you need to know to get your reward</p>
+    <!-- Brand: Target -->
+    <div class="brand">Tar<span class="accent">get</span></div>
 
-        <div class="voucher">
-            <div class="amount">$500</div>
-            <div class="label">Maximum voucher value</div>
-        </div>
+    <!-- Reward: $750 -->
+    <div class="reward">Target <span class="highlight">$750</span> Gift Card</div>
+    <div class="sub">Here's everything you need to know to get your reward</div>
 
-        <h3>Quick Start Guide</h3>
-        <div class="guide">
-            <div class="guide-item">
-                <div class="check">✓</div>
-                <div>
-                    <b>Complete 4-6 offers</b>
-                    <small>More deals, more rewards</small>
-                </div>
-            </div>
-            <div class="guide-item">
-                <div class="check">✓</div>
-                <div>
-                    <b>Enter a valid email</b>
-                    <small>For confirmation and updates</small>
-                </div>
-            </div>
-            <div class="guide-item">
-                <div class="check">✓</div>
-                <div>
-                    <b>Must be 18 years or older</b>
-                    <small>Required to participate</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="faq">
-            <h3>Common Questions</h3>
-
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFAQ(this)">
-                    <span>How long do the deals take?</span>
-                    <div class="x">+</div>
-                </div>
-                <div class="faq-a">
-                    Most deals can be completed in just a few minutes. Larger offers may take longer depending on the steps involved.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFAQ(this)">
-                    <span>What kind of deals are included?</span>
-                    <div class="x">+</div>
-                </div>
-                <div class="faq-a">
-                    Deals include free trials, app downloads, surveys, and signups from our partner network.
-                </div>
-            </div>
-
-        </div>
-
-        <!-- ABOUT OFFER SECTION -->
-        <div class="about-offer">
-            <h4>About Offer</h4>
-            <p>targhauls.com is a market research community dedicated to connecting consumer voices with the brands they use every day. By sharing your insights through our featured product reviews and digital tasks, you can earn credits toward high value rewards.</p>
-        </div>
-
-        <!-- CTA BUTTON WITH UPDATED LINK -->
-        <a href="https://linkthem.net/aff_c?offer_id=2746&aff_id=170050" class="cta-btn">
-            Continue <span class="arrow">&#8250;</span>
-        </a>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            © 2026 Target Rewards · All rights reserved.
-        </div>
-
+    <!-- Badge -->
+    <div class="badge">
+        <div class="amount">$750</div>
+        <span class="label">Maximum gift card value</span>
     </div>
 
-    <script>
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            element.classList.toggle('active');
-            answer.classList.toggle('open');
-        }
-    </script>
+    <!-- Quick Start Guide -->
+    <div class="guide-heading">Quick Start Guide</div>
 
+    <div class="step">
+        <span class="check"><i class="fas fa-check-circle"></i></span>
+        <div class="text">
+            <strong>Complete 4-6 deals</strong>
+            <span class="desc">More deals, more rewards</span>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="check"><i class="fas fa-check-circle"></i></span>
+        <div class="text">
+            <strong>Enter a valid email</strong>
+            <span class="desc">For confirmation and updates</span>
+        </div>
+    </div>
+
+    <div class="step">
+        <span class="check"><i class="fas fa-check-circle"></i></span>
+        <div class="text">
+            <strong>Must be 18 years or older</strong>
+            <span class="desc">Required to participate</span>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <div class="faq-heading">Common Questions</div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How long do the deals take?</span>
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <div class="faq-answer">Most deals can be completed in just a few minutes. Larger offers may take longer depending on the steps involved.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>What kind of deals are included?</span>
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <div class="faq-answer">Deals include free trials, app downloads, surveys, and signups from our partner network.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>Is the gift card really free?</span>
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <div class="faq-answer">Yes! There's no purchase required. Complete the offers and you'll earn your Target gift card.</div>
+        </div>
+    </div>
+
+    <!-- About – using targhauls.com -->
+    <div class="about">
+        <strong>About This Offer</strong>
+        <p>
+            <a href="https://targhauls.com" target="_blank">targhauls.com</a> is a market research community dedicated to connecting consumer voices with the brands they use every day. By sharing your insights through featured product reviews and digital tasks, you can earn credits toward high‑value rewards like this Target gift card.
+        </p>
+    </div>
+
+    <!-- CTA – updated with the new link -->
+    <a href="https://giftclick.org/aff_c?offer_id=1177&aff_id=170050" class="cta" target="_blank" rel="noopener">
+        <i class="fas fa-arrow-right"></i> Continue
+    </a>
+
+    <div class="footer">© 2026 <span>Target Rewards</span> · All rights reserved.</div>
+
+</div>
+
+<script>
+    function toggleFAQ(element) {
+        const answer = element.parentElement.querySelector('.faq-answer');
+        const icon = element.querySelector('i');
+        answer.classList.toggle('active');
+        icon.classList.toggle('rotated');
+    }
+</script>
 </body>
 </html>
